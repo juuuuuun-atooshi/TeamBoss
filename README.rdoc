@@ -1,29 +1,35 @@
-== README
+git cloneする
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+.gitignoreにvendor/bundleを追加
 
-Things you may want to cover:
+bundle install —path vendor/bundle
 
-* Ruby version
+sudo service postgresql start（cloud9の人のみ）
 
-* System dependencies
+rake db:create
 
-* Configuration
+rake db:migrate
 
-* Database creation
+Githubのアカウント情報を聞いてCollaboratorに追加
 
-* Database initialization
+git checkout -b develop
 
-* How to run the test suite
+——開発スタート——
 
-* Services (job queues, cache servers, search engines, etc.)
+git checkout -b issue#○○
 
-* Deployment instructions
+git add .
 
-* ...
+git commit -m '（コミット内容）'
 
+git push origin issue#○○
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
-# force push はmasterにできません
+プルリク作成
+
+マージ
+
+ブランチ削除
+
+git checkout develop
+
+git pull origin develop
