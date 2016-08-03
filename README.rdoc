@@ -1,13 +1,13 @@
-#テーマ授業【Gitを用いたチーム開発】
+# テーマ授業【Gitを用いたチーム開発】
 
-###開発をスタートするまでの準備
+### 開発をスタートするまでの準備
 
 1. cloneする
 
-* cloneとは現時点でGithubのリポジトリに上がっているファイルやディレクトリを
+cloneとは現時点でGithubのリポジトリに上がっているファイルやディレクトリを
 そっくりそのままローカルに「コピー」することを指します。
 
-* $ git clone https://github.com/DiveintoCode-corp/DIC_thema_lesson.git
+ `$ git clone https://github.com/DiveintoCode-corp/DIC_thema_lesson.git`
 とすると、クローンできます。
 なお、クローンすると自動的にリモートリポジトリが追加されるので
 
@@ -50,7 +50,7 @@ postgresqlを起動させます。
 
 
 
-###開発スタートしてからの流れ
+### 開発スタートしてからの流れ
 
 1. 現在のブランチを確認
 
