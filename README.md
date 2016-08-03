@@ -7,12 +7,12 @@
 cloneとは現時点でGithubのリポジトリに上がっているファイルやディレクトリを
 そっくりそのままローカルに「コピー」することを指します。
 
-$ git clone https://github.com/DiveintoCode-corp/DIC_thema_lesson.git
+`$ git clone https://github.com/DiveintoCode-corp/DIC_thema_lesson.git`
 
 とすると、クローンできます。
 なお、クローンすると自動的にリモートリポジトリが追加されるので
 
-$ git remote add origin ○○○○○
+`$ git remote add origin ○○○○○`
 
 は必要ありません。
 さらにクローンは「ブランチ毎」にすることができます。
@@ -23,26 +23,26 @@ $ git remote add origin ○○○○○
 .gitignoreはバージョン管理対象外のものを指定するファイルです。
 
 
-3. bundle install --path vendor/bundle
+3. `bundle install --path vendor/bundle`
 
 一般的にチーム開発においてGemをインストールするコマンドは「vendor/bundle」とつけます。
 これはチーム内でGemのバージョンを合わせるために、
 コンピュータの裏側ではなくあえてアプリケーションの中にGemをインストールします。
 
 
-4. sudo service postgresql start（cloud9のみ）
+4. `sudo service postgresql start`（cloud9のみ）
 
 postgresqlを起動させます。
 
 
 5. ローカル環境にデータベースを作成
 
-$ rake db:create
+`$ rake db:create`
 
 
 6. ローカル環境にテーブルを作成
 
-$ rake db:migrate
+`$ rake db:migrate`
 
 
 7. Githubのアカウント情報を聞いてCollaboratorに追加
@@ -59,34 +59,34 @@ $ rake db:migrate
 issueごとのブランチは必ず「develop」ブランチから派生します。
 ここで絶対やってはいけないのは、issue#○○○というブランチからissue#△△△というブランチを派生させることです。
 
-$ git branch
+`$ git branch`
 
 で必ずdevelopブランチにいることを確認しましょう。
 
 
 2. issueごとにブランチを切る
 
-$ git checkout -b issue#○○
+`$ git checkout -b issue#○○`
 
 
 3. 開発
 
 もし自分が開発途中で誰かがリモートのdevelopブランチにpushした時は、
 
-$ git pull origin develop
+`$ git pull origin develop`
 
 をしてローカルのdevelopブランチを最新にしなければなりません。
 
 もし途中で誰かがマイグレーションファイルをプッシュしたらpullした後に
 
-$ rake db:migrate
+`$ rake db:migrate`
 
 を実行しなければなりません。
 
 4. コミット
 
-$ git add .
-$ git commit -m '（コミット内容）'
+`$ git add .``
+`$ git commit -m '（コミット内容）'`
 
 
 5. push
@@ -94,7 +94,7 @@ $ git commit -m '（コミット内容）'
 開発していたブランチ名がissue#○○○であれば、
 送り先のリモートブランチの名前もissue#○○○にすべきです。
 
-$ git push origin issue#○○○
+`$ git push origin issue#○○○`
 
 と打ってpushしましょう。
 
@@ -118,7 +118,7 @@ issueがマージまで完了したらそのブランチは不要となるので
 リモートのブランチはマージした時に「delete」のボタンが出現します。
 ローカルのブランチは
 
-$ git branch -d issue#○○○
+`$ git branch -d issue#○○○`
 
 で消すことができます。
 
@@ -127,7 +127,7 @@ $ git branch -d issue#○○○
 次のissueに取り掛かる前にローカルのdevelopブランチを最新にしておきます。
 最新ではない状態からブランチを切ってしまうとコンフリクトのリスクが高まります。
 
-$ git checkout develop
-$ git pull origin develop
+`$ git checkout develop`
+`$ git pull origin develop`
 
 を実行しましょう。
