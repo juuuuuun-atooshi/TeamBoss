@@ -7,12 +7,16 @@
 cloneとは現時点でGithubのリポジトリに上がっているファイルやディレクトリを
 そっくりそのままローカルに「コピー」することを指します。
 
-`$ git clone https://github.com/DiveintoCode-corp/DIC_thema_lesson.git`
+```
+$ git clone https://github.com/DiveintoCode-corp/DIC_thema_lesson.git
+```
 
 とすると、クローンできます。
 なお、クローンすると自動的にリモートリポジトリが追加されるので
 
-`$ git remote add origin ○○○○○`
+```
+$ git remote add origin ○○○○○
+```
 
 は必要ありません。
 さらにクローンは「ブランチ毎」にすることができます。
@@ -23,31 +27,42 @@ cloneとは現時点でGithubのリポジトリに上がっているファイル
 .gitignoreはバージョン管理対象外のものを指定するファイルです。
 
 
-#### `bundle install --path vendor/bundle`
+#### gemのインストール
+
+```
+$ bundle install --path vendor/bundle
+```
 
 一般的にチーム開発においてGemをインストールするコマンドは「vendor/bundle」とつけます。
 これはチーム内でGemのバージョンを合わせるために、
 コンピュータの裏側ではなくあえてアプリケーションの中にGemをインストールします。
 
 
-#### `sudo service postgresql start`（cloud9のみ）
+#### Postgresqlを起動（cloud9のみ）
 
-postgresqlを起動させます。
+```
+$ sudo service postgresql start
+```
 
 
 #### ローカル環境にデータベースを作成
 
-`$ rake db:create`
+```
+$ rake db:create
+```
 
 
 #### ローカル環境にテーブルを作成
 
-`$ rake db:migrate`
+```
+$ rake db:migrate
+```
 
 
 #### Githubのアカウント情報を聞いてCollaboratorに追加
 
 これをしないとリモートリポジトリにプッシュすることができません。
+Githubに登録されているメールに招待メールが行ってるので承認する。
 
 
 
@@ -59,34 +74,47 @@ postgresqlを起動させます。
 issueごとのブランチは必ず「develop」ブランチから派生します。
 ここで絶対やってはいけないのは、issue#○○○というブランチからissue#△△△というブランチを派生させることです。
 
-`$ git branch`
+```
+$ git branch
+```
 
 で必ずdevelopブランチにいることを確認しましょう。
 
 
 #### issueごとにブランチを切る
 
-`$ git checkout -b issue#○○`
+```
+$ git checkout -b issue#○○
+```
 
 
 #### 開発
 
 もし自分が開発途中で誰かがリモートのdevelopブランチにpushした時は、
 
-`$ git pull origin develop`
+```
+$ git pull origin develop
+```
 
 をしてローカルのdevelopブランチを最新にしなければなりません。
 
 もし途中で誰かがマイグレーションファイルをプッシュしたらpullした後に
 
-`$ rake db:migrate`
+```
+$ rake db:migrate
+```
 
 を実行しなければなりません。
 
 #### コミット
 
-`$ git add .`
-`$ git commit -m '（コミット内容）'`
+```
+$ git add .
+```
+
+```
+$ git commit -m '（コミット内容）'
+```
 
 
 #### push
@@ -94,7 +122,9 @@ issueごとのブランチは必ず「develop」ブランチから派生しま�
 開発していたブランチ名がissue#○○○であれば、
 送り先のリモートブランチの名前もissue#○○○にすべきです。
 
-`$ git push origin issue#○○○`
+```
+$ git push origin issue#○○○
+```
 
 と打ってpushしましょう。
 
@@ -118,7 +148,9 @@ issueがマージまで完了したらそのブランチは不要となるので
 リモートのブランチはマージした時に「delete」のボタンが出現します。
 ローカルのブランチは
 
-`$ git branch -d issue#○○○`
+```
+$ git branch -d issue#○○○
+```
 
 で消すことができます。
 
@@ -127,7 +159,11 @@ issueがマージまで完了したらそのブランチは不要となるので
 次のissueに取り掛かる前にローカルのdevelopブランチを最新にしておきます。
 最新ではない状態からブランチを切ってしまうとコンフリクトのリスクが高まります。
 
-`$ git checkout develop`
-`$ git pull origin develop`
+```
+$ git checkout develop
+```
+```
+$ git pull origin develop
+```
 
 を実行しましょう。
