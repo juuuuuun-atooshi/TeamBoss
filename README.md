@@ -15,7 +15,7 @@ $ git clone https://github.com/DiveintoCode-corp/DIC_thema_lesson.git
 なお、クローンすると自動的にリモートリポジトリが追加されるので
 
 ```
-$ git remote add origin ○○○○○
+$ git remote add origin ○○○○○○
 ```
 
 は必要ありません。
