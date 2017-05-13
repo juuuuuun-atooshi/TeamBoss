@@ -5,14 +5,18 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  
-  <%= render 'layouts/header' %>
+  <div class ="container" >
+    <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+      <%= render 'layouts/header' %>
 
-  <%= yield %>
+      <%= yield %>
 
-  <%= render 'layouts/footer' %>
-  
+      <%= render 'layouts/footer' %>
+    </div>
+  </div>
+
 </body>
 </html>
