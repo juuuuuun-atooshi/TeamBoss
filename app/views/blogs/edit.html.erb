@@ -1,6 +1,6 @@
-<h1>Editing Blog</h1>
+        <h2>ブログを編集する</h2>
 
-<%= render 'form' %>
+        <%= render 'form' %>
 
-<%= link_to 'Show', @blog %> |
-<%= link_to 'Back', blogs_path %>
+        <%= link_to '詳細を見る', @blog, class: 'btn btn-primary' %> |
+        <%= link_to '戻る', blogs_path, class: 'btn btn-default' %>
