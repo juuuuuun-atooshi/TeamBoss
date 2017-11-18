@@ -1,8 +1,13 @@
-<header>
-  <p>ヘッダーとフッターをパーシャル化する</p>
-  <% if user_signed_in? %>
-    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-  <% else %>
-   <%= link_to "ログイン", new_user_session_path %>
-  <% end %>
-</header>
+<div class="container">
+  <div class="col-md-8 col-md-offset-2 col-sm-10">
+
+    <header>
+      <p>ヘッダーとフッターをパーシャル化する</p>
+      <% if user_signed_in? %>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      <% else %>
+       <%= link_to "ログイン", new_user_session_path %>
+      <% end %>
+    </header>
+  </div>
+</div>
